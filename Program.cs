@@ -34,7 +34,7 @@ namespace ToolTest
                 if (!File.Exists(@"C:\Temp\Report2023\" + fileName))
                 {
                     //Download file to the local path.
-                    ToolTest.DataFile.FileClass.DownLoadFile(urlAddress + "/" + fileName, @"C:\Temp\Report2023\" + fileName);
+                    ToolTest.DataFile.FileClass.DownLoadFile(@urlAddress + "/" + fileName, @"C:\Temp\Report2023\" + fileName);
                    
                     //Transform file into datatable and return.
                     DataTable dt = ToolTest.DataFile.FileClass.ReadExcel(fileName);
@@ -46,7 +46,7 @@ namespace ToolTest
                 }
                 else
                 {
-                    Console.WriteLine("File already exist: "+@"C:\Temp\Report2023\" + fileName);
+                    Console.WriteLine("File already exist");
                 }
             }
             Console.WriteLine("Download was successful. Please enter to exist.");
